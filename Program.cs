@@ -1,3 +1,5 @@
+using Desafio_TargetSistemas.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 
@@ -6,6 +8,9 @@ builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<ComissaoService>();
+builder.Services.AddSingleton<EstoqueService>();
+builder.Services.AddScoped<JurosService>();
 
 var app = builder.Build();
 
